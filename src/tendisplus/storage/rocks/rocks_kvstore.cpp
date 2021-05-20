@@ -1112,6 +1112,13 @@ rocksdb::Options RocksKVStore::options() {
     options.write_buffer_size /= 2;
   }
 
+  if (_cfg->rocksEnableBlobFiles) {
+    options.enable_blob_files = true;
+    options.min_blob_size = 2048;
+    // TODO(jingjunli): configurable blob_file_size blob_compression_type blob_garbage_collection_age_cutoff
+    options.enable_blob_garbage_collection = true;
+  }
+
   options.table_factory.reset(
     rocksdb::NewBlockBasedTableFactory(table_options));
 

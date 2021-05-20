@@ -451,6 +451,7 @@ ServerParams::ServerParams() {
   REGISTER_VARS_DIFF_NAME_DYNAMIC("rocks.flush_log_at_trx_commit",
                                   rocksFlushLogAtTrxCommit);
   REGISTER_VARS_DIFF_NAME("rocks.wal_dir", rocksWALDir);
+  REGISTER_VARS_DIFF_NAME("rocks.enable_blob_files", rocksEnableBlobFiles);
 
   REGISTER_VARS_FULL("rocks.compress_type",
                      rocksCompressType,

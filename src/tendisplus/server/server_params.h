@@ -438,6 +438,8 @@ class ServerParams {
   bool rocksFlushLogAtTrxCommit = false;
   bool level0Compress = false;
   bool level1Compress = false;
+  // parameter for RocksDB's Blob
+  bool rocksEnableBlobFiles = true;
 
   uint32_t binlogSendBatch = 256;
   uint32_t binlogSendBytes = 16 * 1024 * 1024;
